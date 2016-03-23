@@ -1,0 +1,19 @@
+add fox entities:
+  title: 'Create new Fox entities'
+
+administer fox entities:
+  title: 'Administer Fox entities'
+  description: 'Allow to access the administration form to configure Fox entities.'
+  restrict access: true
+
+delete fox entities:
+  title: 'Delete Fox entities'
+
+edit fox entities:
+  title: 'Edit Fox entities'
+
+view published fox entities:
+  title: 'View published Fox entities'
+
+view unpublished fox entities:
+  title: 'View unpublished Fox entities'

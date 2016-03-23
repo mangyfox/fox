@@ -1,0 +1,11 @@
+action.configuration.fox_publish_action:
+  type: action_configuration_default
+  label: 'Publish selected fox configuration'
+
+action.configuration.fox_unpublish_action:
+  type: action_configuration_default
+  label: 'Unpublish selected fox configuration'
+
+action.configuration.fox_delete_action:
+  type: action_configuration_default
+  label: 'Delete fox configuration'

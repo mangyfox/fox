@@ -1,0 +1,16 @@
+# Fox menu items definition
+entity.fox.collection:
+  title: 'Foxes'
+  route_name: entity.fox.collection
+  description: 'List Fox entities'
+  parent: system.admin_content
+  weight: 100
+
+# Fox type menu items definition
+entity.fox_type.collection:
+  title: 'Fox types'
+  route_name: entity.fox_type.collection
+  description: 'List Fox type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

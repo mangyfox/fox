@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains fox.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function fox_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the fox module.
+    case 'help.page.fox':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A module providing a fox entity') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function fox_theme() {
+  $theme = [];
+  $theme['fox'] = [
+    'render element' => 'elements',
+    'file' => 'fox.page.inc',
+    'template' => 'fox',
+  ];
+  $theme['fox_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'fox.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function fox_theme_suggestions_fox(array $variables) {
+  $suggestions = array();
+  $entity = $variables['elements']['#fox'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'fox__' . $sanitized_view_mode;
+  $suggestions[] = 'fox__' . $entity->bundle();
+  $suggestions[] = 'fox__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'fox__' . $entity->id();
+  $suggestions[] = 'fox__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

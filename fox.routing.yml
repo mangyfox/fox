@@ -1,0 +1,6 @@
+fox.multiple_delete_confirm:
+  path: '/admin/content/fox/delete'
+  defaults:
+    _form: '\Drupal\fox\Form\FoxDeleteMultipleForm'
+  requirements:
+    _permission: 'administer fox entities'

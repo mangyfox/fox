@@ -1,0 +1,11 @@
+entity.fox.add_form:
+  route_name: 'fox.add_page'
+  title: 'Add Fox'
+  appears_on:
+    - entity.fox.collection
+
+entity.fox_type.add_form:
+  route_name: 'entity.fox_type.add_form'
+  title: 'Add Fox type'
+  appears_on:
+    - entity.fox_type.collection

@@ -1,0 +1,21 @@
+# Fox routing definition
+entity.fox.canonical:
+  route_name: entity.fox.canonical
+  base_route: entity.fox.canonical
+  title: 'View'
+
+entity.fox.edit_form:
+  route_name: entity.fox.edit_form
+  base_route: entity.fox.canonical
+  title: Edit
+
+entity.fox.delete_form:
+  route_name:  entity.fox.delete_form
+  base_route:  entity.fox.canonical
+  title: Delete
+  weight: 10
+
+entity.fox.collection:
+  title: Foxes
+  route_name: entity.fox.collection
+  base_route: system.admin_content

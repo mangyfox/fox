@@ -1,0 +1,5 @@
+name: Fox
+type: module
+description: A module providing a fox entity
+core: 8.x
+package: Custom
