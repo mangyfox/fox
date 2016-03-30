@@ -243,6 +243,59 @@ class Fox extends ContentEntityBase implements FoxInterface {
       ->setLabel(t('Changed'))
       ->setDescription(t('The time that the entity was last edited.'));
 
+    $fields['picture'] = BaseFieldDefinition::create('image')
+      ->setLabel(t('Picture'))
+      ->setSettings([
+        'default_value' => '',
+        'file_directory' => 'foxes',
+        'file_extensions' => 'png gif jpg jpeg',
+        'max_filesize' => '',
+        'max_resolution' => '2000x2000',
+        'alt_field' => TRUE,
+        'alt_field_required' => TRUE,
+        'title_field' => FALSE,
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'image',
+        'weight' => -4,
+        'image_style' => '',
+        'image_link' => '',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'image_image',
+        'progress_indicator' => 'throbber',
+        'preview_image_style' => 'thumbnail',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+      $fields['season'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Season'))
+      ->setDescription(t('The season of this fox.'))
+      ->setSettings([
+        'target_type' => 'taxonomy_term',
+        'default_value' => 0,
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'rendered_entity',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'label' => 'above',
+        'type' => 'entity_reference_autocomplete',
+        'weight' => -4,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => 60,
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('view', FALSE)
+      ->setDisplayConfigurable('form', FALSE);
+
     return $fields;
   }
 
